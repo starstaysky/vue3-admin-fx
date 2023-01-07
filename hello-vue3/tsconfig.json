@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "strict": true,
+      "jsx": "preserve",
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "lib": ["ESNext","DOM"],
+      "isolatedModules": true,
+      "skipLibCheck": true
+  },
+  "include": ["vue.d.ts", "src/**/*.ts","src/**/*.d.ts","src/**/*.tsx"],
+  "exclude": ["**/node_modules", "**/.*/"],
+}
