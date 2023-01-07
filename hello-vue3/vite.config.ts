@@ -15,5 +15,11 @@ export default defineConfig({
         replacement: pathResolve('src') + '/',
       }
     ],
-  }
+  },
+  server: {
+    // Load proxy configuration from .env
+    proxy: {
+      "/dev":  'http://192.168.2.101:3002/'
+    },
+  },
 })
