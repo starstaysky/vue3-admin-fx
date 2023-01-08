@@ -4,7 +4,7 @@ var app = new koa()
 var Router = require('koa-router')
 const serve = require('koa-static')
 const router = new Router()
-app.use(serve(__dirname +'/dist', {extentions: ['html']}))
+app.use(serve(__dirname +'/public', {extentions: ['html']}))
 var myLogger = function (ctx, next) {
     console.log('LOGGED')
     next()
@@ -54,7 +54,7 @@ app.use(myLogger)
 //     await next();
 //     console.log(4);
 // });
-router.get('/login', async (ctx, next) => {
+router.get('/dev/login', async (ctx, next) => {
     console.log('login')
     ctx.response.body = {
         code : 1,
@@ -62,16 +62,16 @@ router.get('/login', async (ctx, next) => {
     }
     console.log('7')
 })
-app.use(async (ctx, next) => {
-    console.log(5);
-    ctx.body = 'Hello World';
-    // await next();
-    console.log(6);
-    ctx.response.etag= 'fsfdsfdsfds'
-});
+// app.use(async (ctx, next) => {
+//     console.log(5);
+//     ctx.body = 'Hello World';
+//     // await next();
+//     console.log(6);
+//     ctx.response.etag= 'fsfdsfdsfds'
+// });
 app.use(router.routes());
 
 
-app.listen(3000, function(err) {
+app.listen(3002, function(err) {
     console.log('listen', err)
 });

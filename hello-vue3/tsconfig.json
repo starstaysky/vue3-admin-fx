@@ -10,7 +10,8 @@
       "esModuleInterop": true,
       "lib": ["ESNext","DOM"],
       "isolatedModules": true,
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "types": ["vite/client"],
   },
   "include": ["vue.d.ts", "src/**/*.ts","src/**/*.d.ts","src/**/*.tsx"],
   "exclude": ["**/node_modules", "**/.*/"],

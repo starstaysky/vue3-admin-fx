@@ -19,7 +19,7 @@ export default defineConfig({
   server: {
     // Load proxy configuration from .env
     proxy: {
-      "/dev":  'http://192.168.2.101:3002/'
+      "/dev":  'http://localhost:3002/'
     },
   },
 })
