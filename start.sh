@@ -1,4 +1,4 @@
-cd hello-vue3
+cd client
 npm run build
 rm -rf ../server/public/
 cp -r dist/ ../server/public
