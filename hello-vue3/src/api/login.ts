@@ -1,4 +1,5 @@
-import request from '../utils/http'
+import request from '/@/utils/http/index'
+
 enum Api {
     Login = '/login',
     Logout = '/logout',

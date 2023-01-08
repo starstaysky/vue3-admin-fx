@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { isLogin } from '../../api/login';
+import { isLogin } from '/@/api/login';
 
 defineProps({
   msg: String

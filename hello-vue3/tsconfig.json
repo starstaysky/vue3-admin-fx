@@ -3,6 +3,7 @@
       "target": "ESNext",
       "module": "ESNext",
       "moduleResolution": "node",
+      "allowJs":true,
       "strict": true,
       "jsx": "preserve",
       "sourceMap": true,
@@ -12,7 +13,11 @@
       "isolatedModules": true,
       "skipLibCheck": true,
       "types": ["vite/client"],
+      "baseUrl":".",
+      "paths": {
+        "/@/*": ["src/*"]
+      }
   },
-  "include": ["vue.d.ts", "src/**/*.ts","src/**/*.d.ts","src/**/*.tsx"],
+  "include": ["src/**/*.ts","src/**/*.d.ts","src/**/*.tsx","src/main.ts", "shims-vue.d.ts"],
   "exclude": ["**/node_modules", "**/.*/"],
 }
