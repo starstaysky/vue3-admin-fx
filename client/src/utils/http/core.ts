@@ -1,6 +1,5 @@
 import axios, {AxiosRequestConfig, AxiosInstance, AxiosPromise, AxiosResponse } from 'axios'
 
-
 class HttpRequest {
     instance!: AxiosInstance;
     config: AxiosRequestConfig;
@@ -27,7 +26,10 @@ class HttpRequest {
         this.instance.interceptors.response.use(function (response: AxiosResponse) {
             // Any status code that lie within the range of 2xx cause this function to trigger
             // Do something with response data
-            return response;
+            console.log(response, 'response')
+            const { data } = response
+            if(data?.success) return data
+            return Promise.reject(data)
           }, function (error) {
             // Any status codes that falls outside the range of 2xx cause this function to trigger
             // Do something with response error

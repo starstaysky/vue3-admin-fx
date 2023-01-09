@@ -55,23 +55,17 @@ app.use(myLogger)
 //     console.log(4);
 // });
 router.get('/dev/login', async (ctx, next) => {
-    console.log('login')
     ctx.response.body = {
-        code : 1,
-        message: '我是login'
+        code : 0,
+        message: '我是login',
+        success: true,
+        data: {
+            user: "fuxing"
+        }
     }
-    console.log('7')
 })
-// app.use(async (ctx, next) => {
-//     console.log(5);
-//     ctx.body = 'Hello World';
-//     // await next();
-//     console.log(6);
-//     ctx.response.etag= 'fsfdsfdsfds'
-// });
+
 app.use(router.routes());
-
-
 app.listen(3002, function(err) {
     console.log('listen', err)
 });
