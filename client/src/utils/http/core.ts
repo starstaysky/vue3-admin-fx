@@ -1,40 +1,50 @@
 import axios, {AxiosRequestConfig, AxiosInstance, AxiosPromise, AxiosResponse } from 'axios'
 
+/**
+ * @description:  axios module
+ */
 class HttpRequest {
-    instance!: AxiosInstance;
-    config: AxiosRequestConfig;
+    private instance!: AxiosInstance;
+    private config: AxiosRequestConfig;
+
     constructor(config: AxiosRequestConfig) {
         this.config = config
         this.init()
     }
-    init(): void {
+    private init(): void {
         // 创建实例
         this.instance = axios.create(this.config)
-        this.setIntercdeptor()
+        this.setupInterceptors()
     }
-    get(url: string, config: AxiosRequestConfig): AxiosPromise | Promise<any>{
-        return this.instance? this.instance.get(url, config) : Promise.resolve()
+
+    /**
+     * @description: Interceptor configuration 拦截器配置
+     */
+    private setupInterceptors(): void {
+      this.instance.interceptors.request.use(function (config) {
+          return config;
+        }, function (error) {
+          return Promise.reject(error);
+        })
+      this.instance.interceptors.response.use(function (response: AxiosResponse) {
+          const { data } = response
+          if(data?.success) return data
+          return Promise.reject(data)
+        }, function (error) {
+          return Promise.reject(error);
+        });
     }
-    setIntercdeptor(): void {
-        this.instance.interceptors.request.use(function (config) {
-            // Do something before request is sent
-            return config;
-          }, function (error) {
-            // Do something with request error
-            return Promise.reject(error);
-          })
-        this.instance.interceptors.response.use(function (response: AxiosResponse) {
-            // Any status code that lie within the range of 2xx cause this function to trigger
-            // Do something with response data
-            console.log(response, 'response')
-            const { data } = response
-            if(data?.success) return data
-            return Promise.reject(data)
-          }, function (error) {
-            // Any status codes that falls outside the range of 2xx cause this function to trigger
-            // Do something with response error
-            return Promise.reject(error);
-          });
+
+    get<T = any>(url: string, config: AxiosRequestConfig): Promise<T>{
+        return this.instance.request({url, method: 'GET', ...config})
+    }
+
+    post<T = any>(url: string, config: AxiosRequestConfig): Promise<T>{
+      return this.instance.request({url, method: 'POST', ...config})
+    }
+
+    request<T = any>(config: AxiosRequestConfig): Promise<T> {
+        return this.instance.request(config)
     }
 }
 

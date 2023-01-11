@@ -1,4 +1,4 @@
-import request from '/@/utils/http/index'
+import request from '../utils/http/index'
 
 enum Api {
     Login = '/login',
