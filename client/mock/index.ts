@@ -5,7 +5,7 @@ import { ResultSuccess } from './_utils';
 export default [
     {
         url: '/dev/login',
-        method: 'get',
+        method: 'post',
         response:()=> {
            return ResultSuccess(user)
         }

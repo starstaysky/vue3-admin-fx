@@ -1,12 +1,12 @@
-import request from '../utils/http/index'
+import { service } from '../utils/http/index'
+import { getLoginModel } from '/@/api/model/loginModel'
 
 enum Api {
-    Login = '/login',
-    Logout = '/logout',
-    GetUserInfo = '/getUserInfo',
-    GetPermCode = '/getPermCode',
-    TestRetry = '/testRetry',
-  }
+  /**
+   * 登录 
+   */
+  Login = '/dev/login'
+}
 export function isLogin() {
-    return request.get(Api.Login, {})
+    return service.postForm<getLoginModel>({url: Api.Login,data: {a: 1, b: 1}})
 }

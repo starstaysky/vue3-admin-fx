@@ -1,6 +1,6 @@
 export const user = {
     name: 'fuxing',
-    pwd: '000000'
+    token: '000000'
 }
 
 export const menu = []
