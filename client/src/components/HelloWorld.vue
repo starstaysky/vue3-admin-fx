@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { isLogin } from '/@/api/login';
+import { isLogin } from '/@/api/login'
 
 defineProps({
   msg: String
@@ -9,7 +9,6 @@ defineProps({
 const count = ref(0)
 async function handleLogin() {
   const data = await isLogin()
-  console.log(data)
 }
 handleLogin()
 </script>

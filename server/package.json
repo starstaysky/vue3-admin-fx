@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "nodemon koa-component.js",
-    "serve":"sh prod.sh"
+    "serve": "sh prod.sh"
   },
   "dependencies": {
     "express": "^4.17.1",

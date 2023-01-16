@@ -1,4 +1,4 @@
 export interface getLoginModel {
-    name: string;
-    toke: string;
+  name: string
+  toke: string
 }
