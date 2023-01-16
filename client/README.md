@@ -152,6 +152,11 @@ This template should help get you started developing with Vue 3 in Vite. The tem
     - vscode 集成
 
       - 安装 Prettier - Code formatter VSC 插件
+      - setting.json
+
+        ```
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        ```
 
     - prettier config
 
