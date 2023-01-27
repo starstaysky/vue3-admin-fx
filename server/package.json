@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon koa-component.js",
+    "start": "nodemon app.js",
     "serve": "sh prod.sh"
   },
   "dependencies": {

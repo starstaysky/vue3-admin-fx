@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-
 async function bootstrap() {
   const app = createApp(App)
   // 初始化注册store

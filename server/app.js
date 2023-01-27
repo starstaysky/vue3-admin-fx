@@ -1,18 +1,17 @@
 var koa = require('koa')
-var fs = require('fs')
 var app = new koa()
 var Router = require('koa-router')
 const serve = require('koa-static')
 const router = new Router()
 app.use(serve(__dirname + '/public', { extentions: ['html'] }))
-var myLogger = function (ctx, next) {
+var myLogger = function (_, next) {
   console.log('LOGGED')
   next()
 }
 
 app.use(myLogger)
 
-router.post('/dev/login', async (ctx, next) => {
+router.post('/dev/login', async ctx => {
   ctx.response.body = {
     code: 0,
     message: '我是login',

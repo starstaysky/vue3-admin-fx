@@ -1,0 +1,16 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 200,
+  "eslint.alwaysShowStatus": true,
+  "vetur.validation.template": false,
+  "vetur.useWorkspaceDependencies": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.formatOnSave": true,
+  "window.zoomLevel": 1,
+  "eslint.format.enable": true,
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "vetur.format.options.useTabs": true,
+  "vetur.format.scriptInitialIndent": true,
+  "vetur.validation.script": false
+}
