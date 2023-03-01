@@ -41,5 +41,6 @@ handleLogin()
 <style scoped>
 a {
   color: #42b983;
+  position: absolute;
 }
 </style>

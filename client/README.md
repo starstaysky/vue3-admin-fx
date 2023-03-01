@@ -268,6 +268,8 @@ This template should help get you started developing with Vue 3 in Vite. The tem
       stylelint.config.js
 
       ```js
+      yarn add stylelint-order stylelint-config-prettier stylelint-config-standard --save
+
       module.exports = {
         root: true,
         plugins: ['stylelint-order'],
@@ -373,6 +375,13 @@ This template should help get you started developing with Vue 3 in Vite. The tem
       }
       ```
 
+    - 插件
+      - stylelint-order
+        保证 css 样式顺序,规范代码（定位、盒模型、内容样式、css3 相关属性）
+      - stylelint-config-standard
+        规范 styleint 样式规则，官方代码规则。
+      - stylelint-config-prettier
+        prettier 规则冲突，禁用所有与格式相关的 Stylelint 规则
     - husky 配置
 
       ```
