@@ -1,0 +1,49 @@
+{
+  "name": "vue3-admin-fx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "server": "cd server && npm run start",
+    "client": "cd client && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"{client,server}/**/*.{vue,ts,tsx}\" --fix",
+    "lint:prettier": "prettier --write  \"{client,server}/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.vue": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starstaysky/vue3-admin-fx.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starstaysky/vue3-admin-fx/issues"
+  },
+  "homepage": "https://github.com/starstaysky/vue3-admin-fx#readme",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0"
+  },
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
+}
