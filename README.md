@@ -35,15 +35,15 @@
   /**
    * 使用vite-plugin-mock插件，viteMockServe函数添加配置
    */
-  import { viteMockServe } from 'vite-plugin-mock'
+  import { viteMockServe } from "vite-plugin-mock";
 
   export function configMockPlugin(isBuild: boolean) {
     return viteMockServe({
       ignore: /^\_/, //忽略目录
-      mockPath: 'mock',
+      mockPath: "mock",
       localEnabled: !isBuild, // 是否启用mock
-      prodEnabled: isBuild
-    })
+      prodEnabled: isBuild,
+    });
   }
   ```
 
@@ -70,9 +70,11 @@
   ] as MockMethod[]
   ```
 
-- 初始化 store TODO
-- 初始化 router TODO
-- 导航守卫 TODO
+- 初始化 store (良好的 treeShaking，不做过度封装)
+- 初始化 router
+  - 根据目录自动生成路由
+  - 配置 404 页面
+  - 导航守卫
 - 登录 TODO
 - 菜单 TODO
 - 全局错误处理 TODO
@@ -253,9 +255,14 @@
         "vetur.format.defaultFormatter.js": "vscode-typescript",
         "vetur.format.options.useTabs": true,
         "vetur.format.scriptInitialIndent": true,
-        "vetur.validation.script": false
+        "vetur.validation.script": false,
+        "path-intellisense.mappings": {
+          "/@/": "${workspaceRoot}/src"
+        }
       }
       ```
+
+      - path-intellisense 插件解决 vue 文件中 ts 引入别名文件，路径问题
 
   - husky
   - stylelint
@@ -387,4 +394,4 @@
 
   - commit 规范
 
-## 功能模块
+## 功能模块 TODO

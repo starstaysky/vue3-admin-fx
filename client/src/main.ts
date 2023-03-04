@@ -1,12 +1,14 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import pinia from '/@/stores'
+import setupStore from '/@/stores'
+import setupRouter from '/@/router'
 
 async function bootstrap() {
   const app = createApp(App)
   // 初始化注册store
-  app.use(pinia)
-  // 初始化路由
+  setupStore(app)
+  // 配置路由
+  setupRouter(app)
   // 导航守卫
   // 注册全局组件
   // 配置全局错误处理

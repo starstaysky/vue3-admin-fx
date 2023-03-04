@@ -4,7 +4,7 @@ const toString = Object.prototype.toString
 // 深拷贝
 export function deepMerge<T>(src: any = {}, target: any = {}): T {
   let key: string
-  let res = cloneDeep(src)
+  const res = cloneDeep(src)
   for (key in res) {
     res[key] = isObject(res[key])
       ? deepMerge(res[key], target[key])

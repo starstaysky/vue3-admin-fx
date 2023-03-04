@@ -1,6 +1,4 @@
 import { MockMethod } from 'vite-plugin-mock'
-import { user } from './data'
-import { ResultSuccess } from './_utils'
 
 export default [
   {

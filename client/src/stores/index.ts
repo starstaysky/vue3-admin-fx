@@ -1,6 +1,9 @@
 // 初始化pinia
 import { createPinia } from 'pinia'
+import type { App } from 'vue'
 
-const pinia = createPinia()
+function setupStore(app: App<Element>) {
+  return app.use(createPinia())
+}
 
-export default pinia
+export default setupStore

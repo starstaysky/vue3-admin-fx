@@ -66,7 +66,7 @@ class HttpRequest {
     const { beforeRequestHook, responseHook } = interceptors
     if (beforeRequestHook) beforeRequestHook(this.config)
     return new Promise((resolve, reject) => {
-      let request = formData
+      const request = formData
         ? this.instance.postForm<any, AxiosResponse<ResultType>>(
             this.config.url as any,
             { data: this.config.data },
